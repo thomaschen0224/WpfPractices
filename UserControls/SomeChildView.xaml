@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfPractices.UserControls"
+             xmlns:ap="clr-namespace:WpfPractices.AttachedProperties"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -15,12 +16,21 @@
                  VerticalAlignment="Top"
                  Width="120"
                  TextChanged="textBox_TextChanged" />
-        <Button x:Name="button" Content="Save"
+        <Button x:Name="saveButton"
+                Content="Save"
                 HorizontalAlignment="Left"
                 Margin="10,51,0,0"
                 VerticalAlignment="Top"
                 Width="75"
                 Click="button_Click" />
+        <TextBox x:Name="textBox1"
+                 HorizontalAlignment="Left"
+                 Height="23"
+                 Margin="10,93,0,0"
+                 TextWrapping="Wrap"
+                 Text="{Binding RelativeSource={RelativeSource Self}, Path=(ap:MyAttachedProperty.MyProperty)}"
+                 VerticalAlignment="Top"
+                 Width="120" />
 
     </Grid>
 </UserControl>

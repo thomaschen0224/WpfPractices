@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,24 @@ namespace WpfPractices.UserControls
         public SomeChildView()
         {
             InitializeComponent();
+
+
+            // If you cannot find a specific event for a specific property, you can use DependencyPropertyDescriptor to
+            // create an event on that specific property.
+            DependencyPropertyDescriptor dpd =
+                DependencyPropertyDescriptor.FromProperty(Button.IsFocusedProperty, typeof(Button));
+
+            dpd.AddValueChanged(saveButton, (sender, args) =>
+            {
+                if (!saveButton.IsFocused)
+                {
+                    MessageBox.Show("Save button lost focus.");
+                }
+            });
+
+
         }
-
-        // Commend
-        // test 2
-        // test 3
-
-
+        
 
         public static readonly RoutedEvent DataIsDirtyChangedEvent = EventManager.RegisterRoutedEvent("DataIsChanged",
             RoutingStrategy.Bubble,

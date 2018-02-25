@@ -73,6 +73,7 @@
       <DependentUpon>AnimeMenuTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="AnimeMenuTestViewModel.cs" />
+    <Compile Include="AttachedProperties\MyAttachedProperty.cs" />
     <Compile Include="PeopleListView.xaml.cs">
       <DependentUpon>PeopleListView.xaml</DependentUpon>
     </Compile>
@@ -80,6 +81,9 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RoutedEvents.xaml.cs">
       <DependentUpon>RoutedEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SharedSizeGroup.xaml.cs">
+      <DependentUpon>SharedSizeGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
@@ -92,6 +96,9 @@
     </Compile>
     <Compile Include="UserControls\SomeChildView.xaml.cs">
       <DependentUpon>SomeChildView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SpeedControl.xaml.cs">
+      <DependentUpon>SpeedControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisualStateTest.xaml.cs">
       <DependentUpon>VisualStateTest.xaml</DependentUpon>
@@ -133,6 +140,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SharedSizeGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\SomeChildView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SpeedControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

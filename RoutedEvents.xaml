@@ -5,15 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfPractices"
         xmlns:userControls="clr-namespace:WpfPractices.UserControls"
+        xmlns:attachedProperties="clr-namespace:WpfPractices.AttachedProperties"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
         mc:Ignorable="d"
         Title="RoutedEvents"
         Height="600"
-        Width="800" userControls:SomeChildView.DataIsChanged="RoutedEvents_OnDataIsChanged" >
+        Width="800"
+        userControls:SomeChildView.DataIsChanged="RoutedEvents_OnDataIsChanged"
+        attachedProperties:MyAttachedProperty.MyProperty="happy day">
     <Grid>
         <userControls:ParentView HorizontalAlignment="Left"
-                                 Height="344"
-                                 Margin="426,215,0,0"
+                                 Height="419"
+                                 Margin="426,140,0,0"
                                  VerticalAlignment="Top"
                                  Width="356" />
+        <userControls:SpeedControl HorizontalAlignment="Left"
+                                   Speed="{Binding SpeedModel}"
+                                   Height="49"
+                                   Margin="10,47,0,0"
+                                   VerticalAlignment="Top"
+                                   Width="158" />
+        <TextBox x:Name="textBox"
+                 HorizontalAlignment="Left"
+                 Height="23"
+                 Margin="22,155,0,0"
+                 TextWrapping="Wrap"
+                 Text="{Binding SpeedModel}"
+                 VerticalAlignment="Top"
+                 Width="120" />
     </Grid>
 </Window>

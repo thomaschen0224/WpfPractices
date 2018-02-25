@@ -24,6 +24,22 @@ namespace WpfPractices
             InitializeComponent();
         }
 
+
+
+
+
+        public string SpeedModel
+        {
+            get { return (string)GetValue(SpeedModelProperty); }
+            set { SetValue(SpeedModelProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for SpeedModel.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SpeedModelProperty =
+            DependencyProperty.Register("SpeedModel", typeof(string), typeof(RoutedEvents), new PropertyMetadata(""));
+        
+
+
         private void RoutedEvents_OnDataIsChanged(object sender, RoutedPropertyChangedEventArgs<bool> e)
         {
             if (e.NewValue)
